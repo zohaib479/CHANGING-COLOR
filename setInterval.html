@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            font-weight: bold;
+            width: 150px;
+            margin: 80px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+     <h1>
+        THIS IS MUHAMMAD ZOHAIB  RAZA
+     </h1>
+     <br><br><br><br><br><br><br>
+     <button id="start">Start</button>
+     <button id="end">END</button>
+
+
+
+
+     <script>
+      let random= function()
+      {
+        let hex='0123456789ABCDEF'
+        let color='#'
+       for(let i=0;i<6;i++)
+       {
+        color+=hex[Math.floor(Math.random()*16)];
+       }
+       return color;
+      }
+let t;
+      const startchangingcolor=function()
+      {
+         t=setInterval(()=>{
+       document.body.style.backgroundColor=random();
+       document.querySelector('button').style.backgroundColor='black';
+       document.querySelector('button').style.color='white';
+        document.querySelector('button').style.fontSize='20px';
+        document.querySelector('h1').style.color='white';
+        document.querySelector('h1').style.fontWeight='Montserrat';
+        
+        },1000)
+      }
+      const stopchangingcolor=function()
+      {
+       
+        clearInterval(t);
+        
+        t=null;
+      }
+     document.querySelector('#start').addEventListener('click',startchangingcolor)
+     document.querySelector('#end').addEventListener('click',stopchangingcolor)
+     </script>
+</body>
+</html>
